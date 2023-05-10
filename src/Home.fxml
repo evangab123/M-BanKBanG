@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home">
+   <children>
+      <AnchorPane fx:id="Main_page" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane fx:id="home_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0">
+               <children>
+                  <Button fx:id="btn_keluar" layoutX="172.0" layoutY="749.0" mnemonicParsing="false" onAction="#keluar" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Keluar" />
+                  <Text layoutX="166.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="btn_informasiAkun" layoutX="70.0" layoutY="208.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Informasi Akun" />
+                  <Button fx:id="btn_setting" layoutX="260.0" layoutY="208.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Setting" />
+                  <Line endX="188.0" layoutX="208.0" layoutY="166.0" startX="-138.0" />
+                  <Line endX="188.0" layoutX="215.0" layoutY="384.0" startX="-138.0" />
+                  <Text layoutX="172.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transaksi">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="btn_mtransfer" layoutX="70.0" layoutY="437.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="M-Tansfer" />
+                  <Button fx:id="btn_mpayment" layoutX="260.0" layoutY="437.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="M-Payment" />
+                  <Label fx:id="label_welcome" layoutX="74.0" layoutY="137.0" prefHeight="36.0" prefWidth="334.0" text="&quot;Selamat datang, Evander!!&quot;">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Text layoutX="128.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M-BanKBanG">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="inform_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" visible="false">
+               <children>
+                  <Button fx:id="btn_kembali" layoutX="298.0" layoutY="751.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Home" />
+                  <Text layoutX="166.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="btn_ceksaldo" layoutX="164.0" layoutY="296.0" mnemonicParsing="false" onAction="#cekSaldo" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Cek Saldo" />
+                  <Button fx:id="btn_mutasi" layoutX="164.0" layoutY="427.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Mutasi Rekening" />
+                  <Line endX="188.0" layoutX="208.0" layoutY="166.0" startX="-138.0" />
+                  <Text layoutX="113.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informasi Akun">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="label_norek" layoutX="101.0" layoutY="195.0" prefHeight="17.0" prefWidth="279.0" text="No. Rekening Anda : ">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_limithelp" layoutX="101.0" layoutY="235.0" prefHeight="17.0" prefWidth="279.0" text="Limit Anda Hari ini:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="mutasi_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" visible="false">
+               <children>
+                  <Button fx:id="btn_kembali_mutasi" layoutX="298.0" layoutY="751.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Kembali" />
+                  <Line endX="188.0" layoutX="208.0" layoutY="166.0" startX="-138.0" />
+                  <Text layoutX="113.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <TableView fx:id="table_mutasi" layoutX="96.0" layoutY="258.0" prefHeight="327.0" prefWidth="301.0">
+                    <columns>
+                      <TableColumn id="no_payment" fx:id="kolom_jd" prefWidth="75.0" text="No" />
+                      <TableColumn id="jenis_payment" fx:id="kolom_jenis" prefWidth="75.0" text="Jenis" />
+                        <TableColumn id="nominal" fx:id="kolom_nominal" prefWidth="75.0" text="Nominal" />
+                        <TableColumn id="tanggal" fx:id="kolom_tanggal" prefWidth="75.0" text="Tanggal" />
+                    </columns>
+                  </TableView>
+                  <Text layoutX="144.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mutasi Rekening" textAlignment="CENTER">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="cekSaldo_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" visible="false">
+               <children>
+                  <Button fx:id="btn_kembali_saldo" layoutX="298.0" layoutY="751.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Kembali" />
+                  <Text layoutX="172.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cek Saldo" textAlignment="CENTER">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Text>
+                  <Line endX="188.0" layoutX="208.0" layoutY="166.0" startX="-138.0" />
+                  <Text layoutX="113.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="Label_saldo" layoutX="139.0" layoutY="340.0" text="Rp 1.000.000,00">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Text layoutX="52.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saldo kamu:" textAlignment="CENTER">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="setting_page" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" visible="false">
+               <children>
+                  <Button fx:id="btn_kembali_setting" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Kembali" />
+                  <Text layoutX="189.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Setting" textAlignment="CENTER">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Text>
+                  <Line endX="188.0" layoutX="208.0" layoutY="166.0" startX="-138.0" />
+                  <Text layoutX="113.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="btn_limit" layoutX="164.0" layoutY="268.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Limit" />
+                  <Button fx:id="btn_blokir" layoutX="165.0" layoutY="368.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Blokir" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="limit_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" visible="false">
+               <children>
+                  <Button fx:id="btn_kembali_limit" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Kembali" />
+                  <Text layoutX="210.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Limit" textAlignment="CENTER">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Text>
+                  <Line endX="188.0" layoutX="215.0" layoutY="170.0" startX="-138.0" />
+                  <Text layoutX="113.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="161.0" layoutY="288.0" />
+                  <TextField fx:id="tf_limit" layoutX="146.0" layoutY="269.0" prefHeight="39.0" prefWidth="188.0" promptText="Masukan Limit anda" />
+                  <Button fx:id="btn_limit_set" layoutX="172.0" layoutY="462.0" mnemonicParsing="false" onAction="#Limit" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="OK!" />
+                  <PasswordField fx:id="tf_limit_mpin" layoutX="146.0" layoutY="338.0" prefHeight="37.0" prefWidth="188.0" promptText="M-Pin" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="blokir_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="500.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="btn_kembali_blokir" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Kembali" />
+                  <Text layoutX="189.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blokir" textAlignment="CENTER">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Text>
+                  <Line endX="188.0" layoutX="208.0" layoutY="166.0" startX="-138.0" />
+                  <Text layoutX="113.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <PasswordField fx:id="tf_blokir_mpin" layoutX="139.0" layoutY="300.0" prefHeight="37.0" prefWidth="188.0" promptText="M-Pin" />
+                  <Button fx:id="btn_blokir_set" layoutX="94.0" layoutY="355.0" mnemonicParsing="false" onAction="#Blokir" prefHeight="72.0" prefWidth="279.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="BLOKIR!!!!" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="mtransfer_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" visible="false">
+               <children>
+                  <Button fx:id="btn_kembali_mtransfer" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Home" />
+                  <Text layoutX="165.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M-Transfer" textAlignment="CENTER">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Text>
+                  <Line endX="188.0" layoutX="208.0" layoutY="166.0" startX="-138.0" />
+                  <Text layoutX="113.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="btn_manajemen" layoutX="172.0" layoutY="252.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Manajemen" />
+                  <Button fx:id="btn_transfer" layoutX="172.0" layoutY="369.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Transfer" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="manajemen_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" visible="false">
+               <children>
+                  <Button fx:id="btn_kembali_manajemen" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Home" />
+                  <Text layoutX="106.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manajemen Rekening" textAlignment="CENTER">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Text>
+                  <Line endX="188.0" layoutX="208.0" layoutY="166.0" startX="-138.0" />
+                  <Text layoutX="113.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="mana_sama_bank" layoutX="172.0" layoutY="252.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Sama Bank" />
+                  <Button fx:id="mana_antar_btn" layoutX="172.0" layoutY="369.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Antar Bank" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="payment_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" visible="false">
+               <children>
+                  <Button fx:id="btn_kembali_mpayment" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Home" />
+                  <Text layoutX="165.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M-Payment" textAlignment="CENTER">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Text>
+                  <Line endX="188.0" layoutX="208.0" layoutY="166.0" startX="-138.0" />
+                  <Text layoutX="113.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="btn_bpjs" layoutX="70.0" layoutY="289.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="BPJS" />
+                  <Button fx:id="btn_listrik" layoutX="260.0" layoutY="289.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="PLN" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="bpjs_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" visible="false">
+               <children>
+                  <Button fx:id="btn_kembali_bpjs" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Kembali" />
+                  <Text layoutX="205.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BPJS" textAlignment="CENTER">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Text>
+                  <Line endX="188.0" layoutX="208.0" layoutY="166.0" startX="-138.0" />
+                  <Text layoutX="113.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="btn_bpjs_bayar" layoutX="172.0" layoutY="541.0" mnemonicParsing="false" onAction="#Bayar" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="BAYAR" />
+                  <PasswordField fx:id="tf_bpjs_mpin" layoutX="166.0" layoutY="502.0" promptText="M-PIN" />
+                  <TextField fx:id="tf_bpjs_nominal" layoutX="159.0" layoutY="318.0" promptText="Nominal" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="pln_page" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" visible="false">
+               <children>
+                  <Button fx:id="btn_kembali_pln" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="Kembali" />
+                  <Text layoutX="205.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PLN" textAlignment="CENTER">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Text>
+                  <Line endX="188.0" layoutX="208.0" layoutY="166.0" startX="-138.0" />
+                  <Text layoutX="113.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="btn_pln_bayar" layoutX="172.0" layoutY="541.0" mnemonicParsing="false" onAction="#Bayar" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, red); -fx-cursor: hand;" text="BAYAR" />
+                  <PasswordField fx:id="tf_pln_mpin" layoutX="166.0" layoutY="502.0" promptText="M-PIN" />
+                  <TextField fx:id="tf_pln_nominal" layoutX="159.0" layoutY="318.0" promptText="Nominal" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
