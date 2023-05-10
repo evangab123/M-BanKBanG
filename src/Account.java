@@ -1,7 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 import java.util.Random;
 
 public class Account {
@@ -12,7 +9,8 @@ public class Account {
     private double saldo;
     private ArrayList<Payment> pay= new ArrayList<Payment>();
     private ArrayList<Transfer> tf= new ArrayList<Transfer>();
-    private ArrayList<Manajemen> manage= new ArrayList<Manajemen>();
+    private ArrayList<String> manage= new ArrayList<>();
+    private String jenis_bank;
 
     private int limit = Integer.MAX_VALUE;
     private int limithelper = Integer.MAX_VALUE;
@@ -85,9 +83,7 @@ public class Account {
     }
 
 
-    public ArrayList<Manajemen> getManage() {
-        return manage;
-    }
+
 
 
     public int getLimithelper() {
@@ -98,6 +94,30 @@ public class Account {
         this.limithelper = limithelper;
     }
 
+    public void setPay(ArrayList<Payment> pay) {
+        this.pay = pay;
+    }
+
+    public void setTf(ArrayList<Transfer> tf) {
+        this.tf = tf;
+    }
+
+    public ArrayList<String> getManage() {
+        return manage;
+    }
+
+    public void setManage(ArrayList<String> manage) {
+        this.manage = manage;
+    }
+
+    public String getJenis_bank() {
+        return jenis_bank;
+    }
+
+    public void setJenis_bank(String jenis_bank) {
+        this.jenis_bank = jenis_bank;
+    }
+
     public Account(String username, Customer cust, String mpin) {
         Random rand = new Random();
         int int_random = rand.nextInt(9999);
@@ -106,5 +126,6 @@ public class Account {
         this.Cust = cust;
         this.mpin = mpin;
         this.saldo = 1000000;
+        this.jenis_bank = "sama";
     }
 }

@@ -3,16 +3,24 @@ public class Transfer {
     private String tanggal;
     private String jenis_rekening;
     private String no_transfer;
-    private static int nextidtransfer = 1;
-    private double nominal;
+    private int nextidtransfer = 1;
+    private String nominal;
 
-    public Transfer(String jenis_rekening,int no_rek_tujuan, String tanggal,double nominal) {
+    public Transfer(String jenis_rekening,int no_rek_tujuan, String tanggal,String nominal) {
+        this.no_transfer = "t"+nextidtransfer;
         this.no_rek_tujuan = no_rek_tujuan;
         this.tanggal = tanggal;
         this.jenis_rekening = jenis_rekening;
-        this.no_transfer = "t"+nextidtransfer;
         this.nominal = nominal;
         nextidtransfer++;
+    }
+
+    public String getNo_transfer() {
+        return no_transfer;
+    }
+
+    public void setNo_transfer(String no_transfer) {
+        this.no_transfer = no_transfer;
     }
 
     public int getNo_rek_tujuan() {
@@ -39,11 +47,11 @@ public class Transfer {
         this.jenis_rekening = jenis_rekening;
     }
 
-    public double getNominal() {
+    public String getNominal() {
         return nominal;
     }
 
-    public void setNominal(double nominal) {
+    public void setNominal(String nominal) {
         this.nominal = nominal;
     }
 }

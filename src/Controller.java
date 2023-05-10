@@ -84,6 +84,10 @@ public class Controller {
     @FXML
     private PasswordField tf_log_mpin;
 
+    public static ArrayList<Account> getAccounts() {
+        return Accounts;
+    }
+
     public void hilangkolom() {
         tf_buat_namalengkap.setText("");
         tf_buat_email.setText("");
