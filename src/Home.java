@@ -29,6 +29,8 @@ public class Home implements Initializable {
     @FXML
     private TableColumn<Transfer, String> kolom_tanggal_tf;
     @FXML
+    private TableColumn<Transfer, Integer> kolom_norek_tf1;
+    @FXML
     private TableView<Transfer> table_mutasi_tf;
     @FXML
     private Label Label_saldo;
@@ -158,6 +160,7 @@ public class Home implements Initializable {
 
     @FXML
     private TableColumn<Payment, String> kolom_tanggal;
+
 
     @FXML
     private Label label_limithelp;
@@ -708,10 +711,9 @@ public class Home implements Initializable {
                                 this.getAccount().setSaldo(this.getAccount().getSaldo() - Double.parseDouble(tf_nominalsamabank.getText()));
                                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
                                 LocalDateTime now = LocalDateTime.now();
-                                Transfer tf = new Transfer("sama", acc.getNoRekening(), dtf.format(now), "-"+formatRupiah(Integer.parseInt(tf_nominalsamabank.getText())));
+                                Transfer tf = new Transfer("sama", this.getAccount().getNoRekening(),acc.getNoRekening(), dtf.format(now), formatRupiah(Integer.parseInt(tf_nominalsamabank.getText())));
                                 this.getAccount().getTf().add(tf);
-                                Transfer tf2 = new Transfer("sama", this.getAccount().getNoRekening(), dtf.format(now), "+"+formatRupiah(Integer.parseInt(tf_nominalsamabank.getText())));
-                                acc.getTf().add(tf2);
+                                acc.getTf().add(tf);
                                 pesanalert alert = new pesanalert();
                                 alert.successMessage("Berhasil mentransfer ke Akun atas nama " + acc.getCust().getNamalengkap() + " Sebesar " + formatRupiah(Integer.parseInt(tf_nominalsamabank.getText())));
                                 home_page.setVisible(false);
@@ -755,10 +757,9 @@ public class Home implements Initializable {
                                 this.getAccount().setSaldo(this.getAccount().getSaldo() - Double.parseDouble(tf_nominalantarbank.getText()) - 6000);
                                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
                                 LocalDateTime now = LocalDateTime.now();
-                                Transfer tf = new Transfer("antar", acc.getNoRekening(), dtf.format(now), "-"+formatRupiah(Integer.parseInt(tf_nominalantarbank.getText())));
+                                Transfer tf = new Transfer("antar",this.getAccount().getNoRekening(), acc.getNoRekening(), dtf.format(now), formatRupiah(Integer.parseInt(tf_nominalantarbank.getText())));
                                 this.getAccount().getTf().add(tf);
-                                Transfer tf2 = new Transfer("antar", this.getAccount().getNoRekening(), dtf.format(now), "+"+formatRupiah(Integer.parseInt(tf_nominalantarbank.getText())));
-                                acc.getTf().add(tf2);
+                                acc.getTf().add(tf);
                                 pesanalert alert = new pesanalert();
                                 alert.successMessage("Berhasil mentransfer ke Akun atas nama " + acc.getCust().getNamalengkap() + " Sebesar " + formatRupiah(Integer.parseInt(tf_nominalantarbank.getText())));
                                 home_page.setVisible(false);
@@ -841,6 +842,7 @@ public class Home implements Initializable {
         dataakuntf = FXCollections.observableArrayList(this.getAccount().getTf());
         table_mutasi_tf.setItems(dataakuntf);
         kolom_id_tf.setCellValueFactory(new PropertyValueFactory<>("no_transfer"));
+        kolom_norek_tf1.setCellValueFactory(new PropertyValueFactory<>("no_rek_asal"));
         kolom_nominal_tf.setCellValueFactory(new PropertyValueFactory<>("nominal"));
         kolom_jenistf.setCellValueFactory(new PropertyValueFactory<>("jenis_rekening"));
         kolom_tanggal_tf.setCellValueFactory(new PropertyValueFactory<>("tanggal"));

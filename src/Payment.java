@@ -3,7 +3,7 @@ public class Payment {
     private String no_payment;
     private String jenis_payment;
     private double nominal;
-    private int nextidpayment = 1;
+    private static int nextidpayment = 1;
 
     public Payment( String jenis_payment, double nominal,String tanggal) {
         this.tanggal = tanggal;
