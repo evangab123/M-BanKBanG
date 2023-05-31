@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="852.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0" styleClass="background" stylesheets="@resource/bg.css">
+         <children>
+            <AnchorPane fx:id="login_form" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" visible="false">
+               <children>
+                  <PasswordField fx:id="tf_log_mpin" layoutX="121.0" layoutY="409.0" prefHeight="36.0" prefWidth="240.0" promptText="M - Pin" />
+                  <TextField fx:id="tf_log_username" layoutX="120.0" layoutY="352.0" prefHeight="36.0" prefWidth="240.0" promptText="Username" />
+                  <Button fx:id="btn_log_ogin" layoutX="172.0" layoutY="566.0" mnemonicParsing="false" onAction="#login" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: #204051; -fx-cursor: hand;" text="Login" textFill="WHITE" />
+                  <Text layoutX="166.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selamat datang di " textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Text>
+                  <Text fill="WHITE" layoutX="135.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M-BanKBanG">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <effect>
+                        <Reflection fraction="0.5" topOpacity="0.34" />
+                     </effect>
+                  </Text>
+                  <Text layoutX="101.0" layoutY="674.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Belum memiliki Akun?" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <PasswordField fx:id="tf_log_konfirmasimpin" layoutX="121.0" layoutY="461.0" prefHeight="36.0" prefWidth="240.0" promptText="Konfirmasi M - Pin" />
+                  <Button fx:id="login_buat" layoutX="268.0" layoutY="644.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Buat Akun" textFill="#764ce1" underline="true" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="buatakun_form" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0">
+               <children>
+                  <PasswordField fx:id="tf_buat_mpin" layoutX="121.0" layoutY="409.0" prefHeight="36.0" prefWidth="240.0" promptText="M - Pin" />
+                  <TextField fx:id="tf_buat_email" layoutX="121.0" layoutY="298.0" prefHeight="36.0" prefWidth="240.0" promptText="Email" />
+                  <Button fx:id="btn_buat_buat" layoutX="172.0" layoutY="566.0" mnemonicParsing="false" onAction="#register" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: #204051; -fx-cursor: hand;" text="Buat Akun" textFill="WHITE" />
+                  <Text layoutX="166.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Membuat Akun di" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Text>
+                  <Text fill="WHITE" layoutX="135.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M-BanKBanG">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <effect>
+                        <Reflection fraction="0.5" topOpacity="0.34" />
+                     </effect>
+                  </Text>
+                  <Text layoutX="101.0" layoutY="674.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sudah memiliki Akun?" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <PasswordField fx:id="tf_buat_konfirmpin" layoutX="121.0" layoutY="461.0" prefHeight="36.0" prefWidth="240.0" promptText="Konfirmasi M - Pin" />
+                  <TextField fx:id="tf_buat_username" layoutX="121.0" layoutY="353.0" prefHeight="36.0" prefWidth="240.0" promptText="Username" />
+                  <Button fx:id="buat_login" layoutX="268.0" layoutY="644.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Login" textFill="#764ce1" underline="true">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="tf_buat_namalengkap" layoutX="120.0" layoutY="247.0" prefHeight="36.0" prefWidth="240.0" promptText="Nama Lengkap" />
+                  <TextField fx:id="tf_buat_kelamin" layoutX="120.0" layoutY="513.0" prefHeight="36.0" prefWidth="240.0" promptText="Jenis Kelamin (L/P)" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
