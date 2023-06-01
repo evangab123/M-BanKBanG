@@ -269,7 +269,7 @@ public class Home implements Initializable {
     }
     public void setupuser(Account acc){
         this.account = acc;
-        label_welcome.setText("Selamat datang,"+this.getAccount().getCust().getNamalengkap()+"!!");
+        label_welcome.setText("Selamat datang, "+this.getAccount().getCust().getNamalengkap()+"!");
     }
     @FXML
     void keluar(ActionEvent event) {
