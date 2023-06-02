@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
@@ -19,13 +20,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home">
    <children>
       <AnchorPane fx:id="Main_page" prefHeight="200.0" prefWidth="200.0">
          <children>
             <AnchorPane fx:id="home_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" style="-fx-background-color: #84A9AC;">
                <children>
-                  <Button fx:id="btn_keluar" layoutX="172.0" layoutY="640.0" mnemonicParsing="false" onAction="#keluar" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: #CAE8D5; -fx-cursor: hand;" text="Keluar">
+                  <Button fx:id="btn_keluar" layoutX="172.0" layoutY="625.0" mnemonicParsing="false" onAction="#keluar" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: #CAE8D5; -fx-cursor: hand;" text="Keluar">
                      <effect>
                         <Lighting>
                            <bumpInput>
@@ -55,18 +56,18 @@
                   </Text>
                   <Button fx:id="btn_mtransfer" layoutX="94.0" layoutY="420.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="81.0" prefWidth="91.0" style="-fx-background-color: #3B6978; -fx-cursor: hand;" stylesheets="@resource/logosetting.css">
                      <effect>
-                        <DropShadow blurType="ONE_PASS_BOX" />
+                        <DropShadow blurType="GAUSSIAN" />
                      </effect></Button>
                   <Button fx:id="btn_mpayment" layoutX="293.0" layoutY="420.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="81.0" prefWidth="91.0" style="-fx-background-color: #3B6978; -fx-cursor: hand;" stylesheets="@resource/logosetting.css">
                      <effect>
-                        <DropShadow blurType="ONE_PASS_BOX" />
+                        <DropShadow blurType="GAUSSIAN" />
                      </effect></Button>
                   <Label fx:id="label_welcome" layoutX="139.0" layoutY="141.0" prefHeight="36.0" prefWidth="334.0" text="&quot;Selamat datang, Evander!&quot;">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Text fill="WHITE" layoutX="127.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M-BanKBanG">
+                  <Text fill="WHITE" layoutX="127.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M-BanKBanG">
                      <font>
                         <Font name="BM HANNA 11yrs old OTF" size="36.0" />
                      </font>
@@ -125,14 +126,14 @@
             </AnchorPane>
             <AnchorPane fx:id="mutasi_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" style="-fx-background-color: #84A9AC;" visible="false">
                <children>
-                  <Button fx:id="btn_kembali_mutasi" layoutX="298.0" layoutY="751.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Kembali" />
-                  <Line endX="188.0" layoutX="208.0" layoutY="166.0" startX="-138.0" />
+                  <Button fx:id="btn_kembali_mutasi" layoutX="217.0" layoutY="665.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="52.0" style="-fx-background-color: #84A9AC; -fx-cursor: hand;" stylesheets="@resource/logosetting.css" textFill="WHITE" />
+                  <Line endX="201.5" layoutX="208.0" layoutY="124.0" startX="-138.0" />
                   <Text layoutX="113.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <TableView fx:id="table_mutasi" layoutX="90.0" layoutY="212.0" prefHeight="185.0" prefWidth="301.0">
+                  <TableView fx:id="table_mutasi" layoutX="90.0" layoutY="178.0" prefHeight="185.0" prefWidth="301.0">
                     <columns>
                       <TableColumn id="no_payment" fx:id="kolom_jd" prefWidth="75.0" text="No" />
                       <TableColumn id="jenis_payment" fx:id="kolom_jenis" prefWidth="75.0" text="Jenis" />
@@ -143,7 +144,7 @@
                         <DropShadow />
                      </effect>
                   </TableView>
-                  <TableView fx:id="table_mutasi_tf" layoutX="18.0" layoutY="468.0" prefHeight="200.0" prefWidth="446.0">
+                  <TableView fx:id="table_mutasi_tf" layoutX="18.0" layoutY="431.0" prefHeight="200.0" prefWidth="446.0">
                      <columns>
                         <TableColumn id="no_payment" fx:id="kolom_id_tf" prefWidth="32.0" text="No" />
                         <TableColumn id="jenis_payment" fx:id="kolom_jenistf" prefWidth="74.0" text="Jenis" />
@@ -156,26 +157,32 @@
                         <DropShadow />
                      </effect>
                   </TableView>
-                  <Text layoutX="138.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mutasi Rekening" textAlignment="CENTER">
+                  <Text layoutX="138.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mutasi Rekening" textAlignment="CENTER">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Text>
-                  <Text layoutX="213.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment" textAlignment="CENTER">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="215.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tranfer" textAlignment="CENTER">
+                  <Text fill="WHITE" layoutX="213.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment" textAlignment="CENTER">
                      <font>
                         <Font size="16.0" />
                      </font>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Text>
+                  <Text fill="WHITE" layoutX="213.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transfer" textAlignment="CENTER">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <effect>
+                        <Glow />
+                     </effect>
                   </Text>
                </children>
             </AnchorPane>
             <AnchorPane fx:id="cekSaldo_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" style="-fx-background-color: #84A9AC;" visible="false">
                <children>
-                  <Button fx:id="btn_kembali_saldo" layoutX="298.0" layoutY="751.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Kembali" />
+                  <Button fx:id="btn_kembali_saldo" layoutX="206.0" layoutY="366.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="50.0" prefWidth="55.0" style="-fx-background-color: #84A9AC; -fx-cursor: hand;" stylesheets="@resource/logosetting.css" textFill="WHITE" />
                   <Text layoutX="172.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cek Saldo" textAlignment="CENTER">
                      <font>
                         <Font size="28.0" />
@@ -187,22 +194,29 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Label fx:id="Label_saldo" layoutX="139.0" layoutY="340.0" text="Rp 1.000.000,00">
+                  <Label fx:id="Label_saldo" layoutX="142.0" layoutY="261.0" text="Rp 1.000.000,00" textFill="WHITE">
                      <font>
                         <Font size="27.0" />
                      </font>
+                     <effect>
+                        <Lighting bumpInput="$null">
+                           <light>
+                              <Light.Distant azimuth="253.09" elevation="32.52" />
+                           </light>
+                        </Lighting>
+                     </effect>
                   </Label>
-                  <Text layoutX="52.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saldo kamu:" textAlignment="CENTER">
+                  <Text fill="WHITE" layoutX="194.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saldo kamu:" textAlignment="CENTER">
                      <font>
-                        <Font size="28.0" />
+                        <Font size="18.0" />
                      </font>
                   </Text>
                </children>
             </AnchorPane>
             <AnchorPane fx:id="setting_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" style="-fx-background-color: #84A9AC;" visible="false">
                <children>
-                  <Button fx:id="btn_kembali_setting" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Kembali" />
-                  <Text layoutX="189.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Setting" textAlignment="CENTER">
+                  <Button fx:id="btn_kembali_setting" layoutX="173.0" layoutY="491.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: #84A9AC; -fx-cursor: hand;" stylesheets="@resource/logosetting.css" textFill="WHITE" />
+                  <Text layoutX="189.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Setting" textAlignment="CENTER">
                      <font>
                         <Font size="28.0" />
                      </font>
@@ -225,7 +239,7 @@
             </AnchorPane>
             <AnchorPane fx:id="limit_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" style="-fx-background-color: #84A9AC;" visible="false">
                <children>
-                  <Button fx:id="btn_kembali_limit" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Kembali" />
+                  <Button fx:id="btn_kembali_limit" layoutX="213.0" layoutY="544.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="50.0" prefWidth="55.0" style="-fx-background-color: #84A9AC; -fx-cursor: hand;" stylesheets="@resource/logosetting.css" />
                   <Text layoutX="210.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Limit" textAlignment="CENTER">
                      <font>
                         <Font size="28.0" />
@@ -242,7 +256,10 @@
                      <effect>
                         <DropShadow />
                      </effect></TextField>
-                  <Button fx:id="btn_limit_set" layoutX="172.0" layoutY="462.0" mnemonicParsing="false" onAction="#Limit" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="OK!" />
+                  <Button fx:id="btn_limit_set" layoutX="172.0" layoutY="462.0" mnemonicParsing="false" onAction="#Limit" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="OK!" textFill="WHITE">
+                     <effect>
+                        <InnerShadow />
+                     </effect></Button>
                   <PasswordField fx:id="tf_limit_mpin" layoutX="146.0" layoutY="338.0" prefHeight="37.0" prefWidth="188.0" promptText="M-Pin">
                      <effect>
                         <DropShadow />
@@ -251,7 +268,7 @@
             </AnchorPane>
             <AnchorPane fx:id="blokir_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="874.0" prefWidth="500.0" style="-fx-background-color: #84A9AC;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Button fx:id="btn_kembali_blokir" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Kembali" />
+                  <Button fx:id="btn_kembali_blokir" layoutX="185.0" layoutY="403.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: #84A9AC; -fx-cursor: hand;" stylesheets="@resource/logosetting.css" text="" />
                   <Text layoutX="217.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blokir" textAlignment="CENTER">
                      <font>
                         <Font size="28.0" />
@@ -267,7 +284,7 @@
                      <effect>
                         <DropShadow />
                      </effect></PasswordField>
-                  <Button fx:id="btn_blokir_set" layoutX="170.0" layoutY="336.0" mnemonicParsing="false" onAction="#Blokir" prefHeight="22.0" prefWidth="160.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="BLOKIR!!!!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                  <Button fx:id="btn_blokir_set" layoutX="170.0" layoutY="336.0" mnemonicParsing="false" onAction="#Blokir" prefHeight="22.0" prefWidth="160.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="OK!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -279,7 +296,10 @@
             </AnchorPane>
             <AnchorPane fx:id="mtransfer_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" style="-fx-background-color: #84A9AC;" visible="false">
                <children>
-                  <Button fx:id="btn_kembali_mtransfer" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Home" />
+                  <Button fx:id="btn_kembali_mtransfer" layoutX="207.0" layoutY="434.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="50.0" prefWidth="55.0" style="-fx-background-color: CAE8D5; -fx-cursor: hand;" stylesheets="@resource/logosetting.css">
+                     <effect>
+                        <InnerShadow />
+                     </effect></Button>
                   <Text layoutX="165.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M-Transfer" textAlignment="CENTER">
                      <font>
                         <Font size="28.0" />
@@ -291,13 +311,19 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Button fx:id="btn_manajemen" layoutX="172.0" layoutY="252.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Manajemen" />
-                  <Button fx:id="btn_transfer" layoutX="172.0" layoutY="369.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Transfer" />
+                  <Button fx:id="btn_manajemen" layoutX="84.0" layoutY="252.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="300.0" style="-fx-background-color: #3B6978; -fx-background-radius: 30 30 30 30; -fx-cursor: hand;" text="Manajemen" textFill="WHITE">
+                     <effect>
+                        <InnerShadow />
+                     </effect></Button>
+                  <Button fx:id="btn_transfer" layoutX="84.0" layoutY="336.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="300.0" style="-fx-background-color: #3B6978; -fx-background-radius: 30 30 30 30; -fx-cursor: hand;" text="Transfer" textFill="WHITE">
+                     <effect>
+                        <InnerShadow />
+                     </effect></Button>
                </children>
             </AnchorPane>
             <AnchorPane fx:id="transfer_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" style="-fx-background-color: #84A9AC;" visible="false">
                <children>
-                  <Button fx:id="btn_kembali_tranfer" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Kembali" />
+                  <Button fx:id="btn_kembali_tranfer" layoutX="172.0" layoutY="427.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: #84A9AC; -fx-cursor: hand;" stylesheets="@resource/logosetting.css" text="" />
                   <Text layoutX="183.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transfer" textAlignment="CENTER">
                      <font>
                         <Font size="28.0" />
@@ -309,13 +335,19 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Button fx:id="btn_antar_bank" layoutX="164.0" layoutY="459.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Antar Bank" />
-                  <Button fx:id="btn_sama_bank" layoutX="165.0" layoutY="337.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Sama Bank" />
+                  <Button fx:id="btn_antar_bank" layoutX="89.0" layoutY="313.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="290.0" style="-fx-background-color: #3B6978; -fx-background-radius: 30 30 30 30; -fx-cursor: hand;" text="Antar Bank" textFill="WHITE">
+                     <effect>
+                        <InnerShadow />
+                     </effect></Button>
+                  <Button fx:id="btn_sama_bank" layoutX="89.0" layoutY="221.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="290.0" style="-fx-background-color: #3B6978; -fx-background-radius: 30 30 30 30; -fx-cursor: hand;" text="Sesama" textFill="WHITE" wrapText="true">
+                     <effect>
+                        <InnerShadow />
+                     </effect></Button>
                </children>
             </AnchorPane>
             <AnchorPane fx:id="manajemen_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" style="-fx-background-color: #84A9AC;" visible="false">
                <children>
-                  <Button fx:id="btn_kembali_manajemen" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Kembali" />
+                  <Button fx:id="btn_kembali_manajemen" layoutX="164.0" layoutY="433.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: #84A9AC; -fx-cursor: hand;" stylesheets="@resource/logosetting.css" text="" />
                   <Text layoutX="106.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manajemen Rekening" textAlignment="CENTER">
                      <font>
                         <Font size="28.0" />
@@ -327,14 +359,26 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Button fx:id="btn_buat_manajemen" layoutX="172.0" layoutY="474.0" mnemonicParsing="false" onAction="#buatManajemen" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Buat" />
-                  <TextField fx:id="tf_norek_manajemen" layoutX="128.0" layoutY="290.0" prefHeight="40.0" prefWidth="211.0" promptText="Masukan No Rekening" />
-                  <ComboBox fx:id="combo_jenisbox" layoutX="158.0" layoutY="368.0" prefWidth="150.0" promptText="Jenis Bank" />
+                  <Button fx:id="btn_buat_manajemen" layoutX="164.0" layoutY="357.0" mnemonicParsing="false" onAction="#buatManajemen" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Buat" textFill="WHITE">
+                     <effect>
+                        <InnerShadow />
+                     </effect></Button>
+                  <TextField fx:id="tf_norek_manajemen" layoutX="128.0" layoutY="270.0" prefHeight="40.0" prefWidth="211.0" promptText="Masukan No Rekening">
+                     <effect>
+                        <DropShadow />
+                     </effect></TextField>
+                  <ComboBox fx:id="combo_jenisbox" layoutX="127.0" layoutY="227.0" prefHeight="26.0" prefWidth="211.0" promptText="Jenis Bank">
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" />
+                     </effect></ComboBox>
                </children>
             </AnchorPane>
             <AnchorPane fx:id="payment_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" style="-fx-background-color: #84A9AC;" visible="false">
                <children>
-                  <Button fx:id="btn_kembali_mpayment" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Home" />
+                  <Button fx:id="btn_kembali_mpayment" layoutX="206.0" layoutY="370.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="50.0" prefWidth="55.0" style="-fx-background-color: #CAE8D5; -fx-cursor: hand;" stylesheets="@resource/logosetting.css">
+                     <effect>
+                        <InnerShadow />
+                     </effect></Button>
                   <Text layoutX="165.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M-Payment" textAlignment="CENTER">
                      <font>
                         <Font size="28.0" />
@@ -346,13 +390,19 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Button fx:id="btn_bpjs" layoutX="70.0" layoutY="289.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="BPJS" />
-                  <Button fx:id="btn_listrik" layoutX="260.0" layoutY="289.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="PLN" />
+                  <Button fx:id="btn_bpjs" layoutX="94.0" layoutY="217.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="279.0" style="-fx-background-color: #3B6978; -fx-background-radius: 30 30 30 30; -fx-cursor: hand;" text="BPJS" textFill="WHITE">
+                     <effect>
+                        <InnerShadow />
+                     </effect></Button>
+                  <Button fx:id="btn_listrik" layoutX="95.0" layoutY="279.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="279.0" style="-fx-background-color: #3B6978; -fx-background-radius: 30 30 30 30; -fx-cursor: hand;" text="PLN" textFill="WHITE">
+                     <effect>
+                        <InnerShadow />
+                     </effect></Button>
                </children>
             </AnchorPane>
             <AnchorPane fx:id="bpjs_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" style="-fx-background-color: #84A9AC;" visible="false">
                <children>
-                  <Button fx:id="btn_kembali_bpjs" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Kembali" />
+                  <Button fx:id="btn_kembali_bpjs" layoutX="172.0" layoutY="417.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: #84A9AC; -fx-cursor: hand;" stylesheets="@resource/logosetting.css" text="" />
                   <Text layoutX="205.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BPJS" textAlignment="CENTER">
                      <font>
                         <Font size="28.0" />
@@ -364,14 +414,23 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Button fx:id="btn_bpjs_bayar" layoutX="172.0" layoutY="541.0" mnemonicParsing="false" onAction="#Bayar" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="BAYAR" />
-                  <PasswordField fx:id="tf_bpjs_mpin" layoutX="166.0" layoutY="502.0" promptText="M-PIN" />
-                  <TextField fx:id="tf_bpjs_nominal" layoutX="159.0" layoutY="318.0" promptText="Nominal" />
+                  <Button fx:id="btn_bpjs_bayar" layoutX="173.0" layoutY="341.0" mnemonicParsing="false" onAction="#Bayar" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="BAYAR" textFill="#f2eeee">
+                     <effect>
+                        <InnerShadow />
+                     </effect></Button>
+                  <PasswordField fx:id="tf_bpjs_mpin" layoutX="126.0" layoutY="272.0" prefHeight="37.0" prefWidth="233.0" promptText="M-PIN">
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" />
+                     </effect></PasswordField>
+                  <TextField fx:id="tf_bpjs_nominal" layoutX="124.0" layoutY="220.0" prefHeight="31.0" prefWidth="235.0" promptText="Nominal">
+                     <effect>
+                        <DropShadow />
+                     </effect></TextField>
                </children>
             </AnchorPane>
             <AnchorPane fx:id="pln_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" style="-fx-background-color: #84A9AC;" visible="false">
                <children>
-                  <Button fx:id="btn_kembali_pln" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Kembali" />
+                  <Button fx:id="btn_kembali_pln" layoutX="171.0" layoutY="402.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: #84A9AC; -fx-cursor: hand;" stylesheets="@resource/logosetting.css" text="" />
                   <Text layoutX="205.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PLN" textAlignment="CENTER">
                      <font>
                         <Font size="28.0" />
@@ -383,16 +442,31 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Button fx:id="btn_pln_bayar" layoutX="172.0" layoutY="541.0" mnemonicParsing="false" onAction="#Bayar" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="BAYAR" />
-                  <PasswordField fx:id="tf_pln_mpin" layoutX="166.0" layoutY="502.0" promptText="M-PIN" />
-                  <TextField fx:id="tf_pln_nominal" layoutX="159.0" layoutY="318.0" promptText="Nominal" />
+                  <Button fx:id="btn_pln_bayar" layoutX="171.0" layoutY="320.0" mnemonicParsing="false" onAction="#Bayar" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="BAYAR" textFill="WHITE">
+                     <effect>
+                        <InnerShadow />
+                     </effect></Button>
+                  <PasswordField fx:id="tf_pln_mpin" layoutX="86.0" layoutY="252.0" prefHeight="37.0" prefWidth="302.0" promptText="M-PIN">
+                     <effect>
+                        <DropShadow />
+                     </effect></PasswordField>
+                  <TextField fx:id="tf_pln_nominal" layoutX="85.0" layoutY="204.0" prefHeight="32.0" prefWidth="303.0" promptText="Nominal">
+                     <effect>
+                        <DropShadow />
+                     </effect></TextField>
                </children>
             </AnchorPane>
             <AnchorPane fx:id="tf_sama_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" style="-fx-background-color: #84A9AC;" visible="false">
                <children>
-                  <PasswordField fx:id="tf_con_mpin_sama" layoutX="166.0" layoutY="427.0" promptText="Masukan MPIN anda" />
-                  <ComboBox fx:id="combo_reksama" layoutX="157.0" layoutY="291.0" prefHeight="26.0" prefWidth="168.0" promptText="Daftar Rekening" />
-                  <Button fx:id="btn_kembali_samatf" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Kembali" />
+                  <PasswordField fx:id="tf_con_mpin_sama" layoutX="92.0" layoutY="303.0" prefHeight="46.0" prefWidth="292.0" promptText="Masukan MPIN anda">
+                     <effect>
+                        <DropShadow />
+                     </effect></PasswordField>
+                  <ComboBox fx:id="combo_reksama" layoutX="90.0" layoutY="202.0" prefHeight="26.0" prefWidth="293.0" promptText="Daftar Rekening">
+                     <effect>
+                        <DropShadow />
+                     </effect></ComboBox>
+                  <Button fx:id="btn_kembali_samatf" layoutX="172.0" layoutY="449.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: #84A9AC; -fx-cursor: hand;" stylesheets="@resource/logosetting.css" text="" />
                   <Text layoutX="106.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transfer Sesama Bank" textAlignment="CENTER">
                      <font>
                         <Font size="28.0" />
@@ -404,14 +478,23 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Button fx:id="btn_tfasama" layoutX="172.0" layoutY="488.0" mnemonicParsing="false" onAction="#transfer" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Tranfer" />
-                  <TextField fx:id="tf_nominalsamabank" layoutX="166.0" layoutY="373.0" promptText="Masukan Nominal Transfer" />
+                  <Button fx:id="btn_tfasama" layoutX="168.0" layoutY="379.0" mnemonicParsing="false" onAction="#transfer" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Transfer" textFill="WHITE">
+                     <effect>
+                        <InnerShadow />
+                     </effect></Button>
+                  <TextField fx:id="tf_nominalsamabank" layoutX="92.0" layoutY="245.0" prefHeight="42.0" prefWidth="291.0" promptText="Masukan Nominal Transfer">
+                     <effect>
+                        <DropShadow />
+                     </effect></TextField>
                </children>
             </AnchorPane>
             <AnchorPane fx:id="tf_antar_page" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="480.0" style="-fx-background-color: #84A9AC;" visible="false">
                <children>
-                  <ComboBox fx:id="combo_rekantar" layoutX="157.0" layoutY="291.0" prefHeight="26.0" prefWidth="168.0" promptText="Daftar Rekening" />
-                  <Button fx:id="btn_kembali_bedatf" layoutX="287.0" layoutY="740.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Kembali" />
+                  <ComboBox fx:id="combo_rekantar" layoutX="97.0" layoutY="227.0" prefHeight="26.0" prefWidth="279.0" promptText="Daftar Rekening">
+                     <effect>
+                        <DropShadow />
+                     </effect></ComboBox>
+                  <Button fx:id="btn_kembali_bedatf" layoutX="173.0" layoutY="460.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: #84A9AC; -fx-cursor: hand;" stylesheets="@resource/logosetting.css" text="" />
                   <Text layoutX="106.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transfer Antar Bank" textAlignment="CENTER">
                      <font>
                         <Font size="28.0" />
@@ -423,14 +506,23 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Button fx:id="btn_tfantar" layoutX="172.0" layoutY="488.0" mnemonicParsing="false" onAction="#transfer" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Tranfer" />
-                  <TextField fx:id="tf_nominalantarbank" layoutX="166.0" layoutY="373.0" promptText="Masukan Nominal Transfer" />
-                  <Text layoutX="177.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fee: Rp 6.000,00" textAlignment="CENTER">
+                  <Button fx:id="btn_tfantar" layoutX="173.0" layoutY="388.0" mnemonicParsing="false" onAction="#transfer" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color:  #3B6978; -fx-cursor: hand;" text="Transfer" textFill="WHITE">
+                     <effect>
+                        <InnerShadow />
+                     </effect></Button>
+                  <TextField fx:id="tf_nominalantarbank" layoutX="98.0" layoutY="269.0" prefHeight="39.0" prefWidth="277.0" promptText="Masukan Nominal Transfer">
+                     <effect>
+                        <DropShadow />
+                     </effect></TextField>
+                  <Text fill="WHITE" layoutX="177.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fee: Rp 6.000,00" textAlignment="CENTER">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Text>
-                  <PasswordField fx:id="tf_con_mpin_antar" layoutX="167.0" layoutY="427.0" promptText="Masukan MPIN anda" />
+                  <PasswordField fx:id="tf_con_mpin_antar" layoutX="99.0" layoutY="320.0" prefHeight="42.0" prefWidth="277.0" promptText="Masukan MPIN anda">
+                     <effect>
+                        <DropShadow />
+                     </effect></PasswordField>
                </children>
             </AnchorPane>
          </children>
