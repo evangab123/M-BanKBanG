@@ -100,47 +100,71 @@ public class Controller {
         tf_log_konfirmasimpin.setText("");
         }
 
-    public boolean register(ActionEvent event) {
+    public void register(ActionEvent event) {
         if (tf_buat_username.getText().isEmpty() || tf_buat_email.getText().isEmpty() || tf_buat_mpin.getText().isEmpty()
                 || tf_buat_konfirmpin.getText().isEmpty() || tf_buat_namalengkap.getText().isEmpty() || tf_buat_kelamin.getText().isEmpty()) {
             pesanalert alert = new pesanalert();
             alert.errorMessage("Tolong isi semua kolom yang tersedia");
-            return false;
+
         } else if (tf_buat_email.getText().matches(".+@gmail.com")) {
             if (tf_buat_konfirmpin.getText().matches("^[0-9]{8}$")) {
                 if (tf_buat_kelamin.getText().equals("L") || tf_buat_kelamin.getText().equals("P")) {
                     if (tf_buat_mpin.getText().equals(tf_buat_konfirmpin.getText())) {
-                        Customer Cust = new Customer(tf_buat_email.getText(), tf_buat_namalengkap.getText(), tf_buat_kelamin.getText());
-                        Account acc = new Account(tf_buat_username.getText(), Cust, tf_buat_mpin.getText());
-                        Accounts.add(acc);
-                        pesanalert alert = new pesanalert();
-                        alert.successMessage("Terima kasih," + acc.getUsername() + "! Kamu Berhasil membuat Akun\n No Rekening anda: " + acc.getNoRekening());
-                        buatakun_form.setVisible(false);
-                        login_form.setVisible(true);
-                        hilangkolom();
-                        return true;
+                        if(Accounts.size()>0){
+                            for(Account acc : Accounts){
+                                if(tf_buat_username.getText().equals(acc.getUsername())){
+                                    pesanalert alert = new pesanalert();
+                                    alert.errorMessage("maaf username telah dipakai");
+                                    break;
+
+                                }else{
+                                    Customer Cust = new Customer(tf_buat_email.getText(), tf_buat_namalengkap.getText(), tf_buat_kelamin.getText());
+                                    Account newacc = new Account(tf_buat_username.getText(), Cust, tf_buat_mpin.getText());
+                                    Accounts.add(newacc);
+                                    pesanalert alert = new pesanalert();
+                                    alert.successMessage("Terima kasih, " + newacc.getCust().getNamalengkap() + "! Kamu Berhasil membuat Akun\n No Rekening anda: " + newacc.getNoRekening());
+                                    buatakun_form.setVisible(false);
+                                    login_form.setVisible(true);
+                                    hilangkolom();
+                                    break;
+                                }
+                            }
+                        }else{
+                            Customer Cust = new Customer(tf_buat_email.getText(), tf_buat_namalengkap.getText(), tf_buat_kelamin.getText());
+                            Account newacc = new Account(tf_buat_username.getText(), Cust, tf_buat_mpin.getText());
+                            Accounts.add(newacc);
+                            pesanalert alert = new pesanalert();
+                            alert.successMessage("Terima kasih, " + newacc.getCust().getNamalengkap() + "! Kamu Berhasil membuat Akun\n No Rekening anda: " + newacc.getNoRekening());
+                            buatakun_form.setVisible(false);
+                            login_form.setVisible(true);
+                            hilangkolom();
+
+                        }
+
+
                     } else {
                         pesanalert alert = new pesanalert();
                         alert.errorMessage("PIN dengan konfirmasi pin tidak cocok");
-                        return false;
+
                     }
                 } else {
                     pesanalert alert = new pesanalert();
                     alert.errorMessage("Isi Jenis Kelamin hanya dengan L/P saja!");
-                    return false;
+
                 }
             } else {
                 pesanalert alert = new pesanalert();
                 alert.errorMessage("MPIN harus berisi 8 buah angka saja!");
-                return false;
+
             }
         } else {
             pesanalert alert = new pesanalert();
             alert.errorMessage("Email tidak valid! cth valid(ukdw@gmail.com)");
-            return false;
+
         }
     }
     public void login(ActionEvent event){
+        boolean checker = false;
         if (tf_log_username.getText().isEmpty() || tf_log_mpin.getText().isEmpty() || tf_log_konfirmasimpin.getText().isEmpty()) {
             pesanalert alert = new pesanalert();
             alert.errorMessage("Tolong isi semua kolom yang tersedia");
@@ -149,8 +173,7 @@ public class Controller {
             for(Account acc : Accounts){
                 if(tf_log_username.getText().equals(acc.getUsername()) && tf_log_mpin.getText().equals(acc.getMpin())){
                     if(acc.isBlokir()==false){
-                        pesanalert alert = new pesanalert();
-                        alert.successMessage("Berhasil masuk");
+                        checker = true;
                         buatakun_form.setVisible(false);
                         login_form.setVisible(false);
                         Util.gantiScene(event,"Home.fxml",acc);
@@ -161,6 +184,13 @@ public class Controller {
                         break;
                     }
                 }
+            }
+            if(checker){
+                pesanalert alert = new pesanalert();
+                alert.successMessage("Berhasil masuk");
+            }else if(checker == false){
+                pesanalert alert = new pesanalert();
+                alert.errorMessage("Username atau password salah");
             }
             hilangkolom();
         }else{

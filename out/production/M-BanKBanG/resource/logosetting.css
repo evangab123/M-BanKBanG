@@ -1,0 +1,27 @@
+#btn_setting{
+    -fx-background-image: url("set.png");
+    -fx-background-size: 25;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position:center; 
+}
+
+#btn_mtransfer{
+    -fx-background-image: url("transfer.png");
+    -fx-background-size: 45;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position:center; 
+}
+
+#btn_mpayment{
+    -fx-background-image: url("payment.png");
+    -fx-background-size: 45;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position:center; 
+}
+
+#btn_kembali{
+    -fx-background-image: url("home.png");
+    -fx-background-size: 25;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position:center; 
+}

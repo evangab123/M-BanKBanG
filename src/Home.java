@@ -296,7 +296,11 @@ public class Home implements Initializable {
             tf_sama_page.setVisible(false);
             tf_antar_page.setVisible(false);
             label_norek.setText("No. Rekening Anda : "+this.getAccount().getNoRekening());
-            label_limithelp.setText("Limit anda hari ini: "+formatRupiah(this.getAccount().getLimithelper()));
+            if(this.getAccount().getLimithelper() == Integer.MAX_VALUE){
+                label_limithelp.setText("Limit anda hari ini: Tidak terbatas");
+            }else{
+                label_limithelp.setText("Limit anda hari ini: "+formatRupiah(this.getAccount().getLimithelper()));
+            }
         } else if (event.getSource() == btn_kembali||event.getSource() == btn_kembali_setting|| event.getSource() == btn_kembali_mtransfer|| event.getSource()== btn_kembali_mpayment) {
             home_page.setVisible(true);
             inform_page.setVisible(false);

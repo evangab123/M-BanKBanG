@@ -1,5 +1,7 @@
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.DialogPane;
+
 public class pesanalert {
     private Alert alert;
 
@@ -9,6 +11,9 @@ public class pesanalert {
         alert.setTitle("Pesan Error");
         alert.setHeaderText(null);
         alert.setContentText(message);
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.setPrefSize(400, 100);
+
         alert.showAndWait();
 
     }
@@ -19,6 +24,8 @@ public class pesanalert {
         alert.setTitle("Pesan Informasi");
         alert.setHeaderText(null);
         alert.setContentText(message);
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.setPrefSize(400, 100);
         alert.showAndWait();
 
     }
