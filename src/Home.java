@@ -854,6 +854,7 @@ public class Home implements Initializable {
     }
 
     public void buatManajemen(ActionEvent event){
+        boolean check = false;
         if(tf_norek_manajemen.getText().isEmpty()||combo_jenisbox.getSelectionModel().isEmpty()){
             pesanalert alert = new pesanalert();
             alert.errorMessage("Isi semua kolom atau pilihan yang tersedia");
@@ -865,12 +866,16 @@ public class Home implements Initializable {
                 if(Integer.parseInt(tf_norek_manajemen.getText()) == acc.getNoRekening()){
                     acc.setJenis_bank(combo_jenisbox.getSelectionModel().getSelectedItem().toString());
                     this.getAccount().getManage().add(acc.getCust().getNamalengkap());
-                    pesanalert alert = new pesanalert();
-                    alert.successMessage("Berhasil menambah");
-                }else{
-                    pesanalert alert = new pesanalert();
-                    alert.errorMessage("Error tidak ada no rekening");
+                    check = true;
+                    break;
                 }
+            }
+            if(check){
+                pesanalert alert = new pesanalert();
+                alert.successMessage("Berhasil menambah");
+            }else{
+                pesanalert alert = new pesanalert();
+                alert.errorMessage("Error tidak ada no rekening");
             }
         }
         tf_norek_manajemen.setText("");
