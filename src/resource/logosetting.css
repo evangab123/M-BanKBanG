@@ -19,9 +19,19 @@
     -fx-background-position:center; 
 }
 
-#btn_kembali{
+#btn_kembali, #btn_kembali_mtransfer, #btn_kembali_mpayment{
     -fx-background-image: url("home.png");
     -fx-background-size: 25;
     -fx-background-repeat: no-repeat;
     -fx-background-position:center; 
+}
+
+#btn_kembali_blokir, #btn_kembali_bpjs, #btn_kembali_limit, #btn_kembali_mutasi, 
+#btn_kembali_pln, #btn_kembali_saldo, #btn_kembali_setting, 
+#btn_kembali_manajemen, #btn_kembali_tranfer, #btn_kembali_samatf, #btn_kembali_bedatf{
+    -fx-background-image: url("back.png");
+    -fx-background-size: 45;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position:center;
+    -fx-background-color: #84A9AC;
 }
