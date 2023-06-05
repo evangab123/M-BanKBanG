@@ -178,10 +178,6 @@ public class Controller {
                         login_form.setVisible(false);
                         Util.gantiScene(event,"Home.fxml",acc);
                         break;
-                    }else {
-                        pesanalert alert = new pesanalert();
-                        alert.errorMessage("Akun telah di blokir!");
-                        break;
                     }
                 }
             }
@@ -190,7 +186,7 @@ public class Controller {
                 alert.successMessage("Berhasil masuk");
             }else if(checker == false){
                 pesanalert alert = new pesanalert();
-                alert.errorMessage("Username atau password salah");
+                alert.errorMessage("Username atau password salah atau akun telah diblokir");
             }
             hilangkolom();
         }else{
